@@ -3,7 +3,7 @@
 九宫格图片列表，支持9+以上数量的显示,支持Hero动画预览图片
 
 # Demo
-<image src="https://github.com/lanzhu1993/flutter_nineold/blob/master/example/assets/video.gif" style="width: 300px" />
+<image src="http://chuantu.xyz/t6/723/1584011832x1033347913.gif" style="width: 300px" />
 
 
 
@@ -14,7 +14,7 @@
 ```
 dependencies:
   ...
-    nineold: ^0.0.1
+    nineold: ^0.0.3
 ```
 
 关于如何运行flutter项目, 参考官方文档[documentation](https://flutter.io/).
