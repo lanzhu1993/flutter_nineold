@@ -1,8 +1,7 @@
 name: nineold
-description: A new Flutter plugin.
+description: Flutter Nine Old plugin.
 version: 0.0.1
-author: josh.lu
-homepage:
+homepage: https://github.com/lanzhu1993/flutter_nineold
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
