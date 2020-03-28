@@ -10,7 +10,8 @@ class GalleryPhotoViewWrapper extends StatefulWidget {
     this.minScale,
     this.maxScale,
     this.initialIndex,
-    @required this.galleryItems,
+    @required this.thumbGalleryItems,
+    this.originGalleryItems,
     this.scrollDirection = Axis.horizontal,
   }) : pageController = PageController(initialPage: initialIndex);
 
@@ -20,7 +21,8 @@ class GalleryPhotoViewWrapper extends StatefulWidget {
   final dynamic maxScale;
   final int initialIndex;
   final PageController pageController;
-  final List<String> galleryItems;
+  final List<String> thumbGalleryItems;
+  final List<String> originGalleryItems;
   final Axis scrollDirection;
 
   @override
@@ -58,22 +60,41 @@ class _GalleryPhotoViewWrapperState extends State<GalleryPhotoViewWrapper> {
             PhotoViewGallery.builder(
               scrollPhysics: const BouncingScrollPhysics(),
               builder: _buildItem,
-              itemCount: widget.galleryItems.length,
+              itemCount: widget.thumbGalleryItems.length,
               loadingBuilder: widget.loadingBuilder,
               backgroundDecoration: widget.backgroundDecoration,
               pageController: widget.pageController,
               onPageChanged: onPageChanged,
               scrollDirection: widget.scrollDirection,
             ),
-            Container(
-              padding: const EdgeInsets.all(20.0),
-              child: Text(
-                "Image ${currentIndex + 1}",
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 17.0,
-                  decoration: null,
+            Positioned(
+              bottom: 20,
+              right: 20,
+              child: Container(
+                child: Text(
+                  "${currentIndex + 1}" +
+                      "/" +
+                      "${widget.thumbGalleryItems.length}",
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 17.0,
+                    decoration: null,
+                  ),
                 ),
+              ),
+            ),
+            Positioned(
+              top: 30,
+              left: 0,
+              child: IconButton(
+                iconSize: 20,
+                icon: Icon(
+                  Icons.arrow_back,
+                  color: Colors.white,
+                ),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
               ),
             )
           ],
@@ -83,8 +104,14 @@ class _GalleryPhotoViewWrapperState extends State<GalleryPhotoViewWrapper> {
   }
 
   PhotoViewGalleryPageOptions _buildItem(BuildContext context, int index) {
-    final String item = widget.galleryItems[index];
-    return  PhotoViewGalleryPageOptions(
+    String item = "";
+    if (null == widget.originGalleryItems ||
+        widget.originGalleryItems.length == 0) {
+      item = widget.thumbGalleryItems[index];
+    } else {
+      item = widget.originGalleryItems[index];
+    }
+    return PhotoViewGalleryPageOptions(
       imageProvider: CachedNetworkImageProvider(item),
       initialScale: PhotoViewComputedScale.contained,
       minScale: PhotoViewComputedScale.contained * (0.5 + index / 10),

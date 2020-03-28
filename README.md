@@ -14,10 +14,18 @@
 ```
 dependencies:
   ...
-    nineold: ^1.0.0
+    nineold: ^1.0.1
 ```
 
 关于如何运行flutter项目, 参考官方文档[documentation](https://flutter.io/).
+
+
+# 版本更新
+
+1.增加缩略图显示，原图查看
+
+2.增加查看原图返回事件
+
 
 # 使用方法
 

@@ -381,7 +381,7 @@ class NineOldWidget extends StatelessWidget {
       context,
       MaterialPageRoute(
         builder: (context) => GalleryPhotoViewWrapper(
-          galleryItems: images,
+          thumbGalleryItems: images,
           backgroundDecoration: const BoxDecoration(
             color: Colors.black,
           ),

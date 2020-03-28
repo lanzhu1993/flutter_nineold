@@ -1,6 +1,6 @@
 name: nineold
-description: Nineoldwidget is a component used to encapsulate the nine palace display of pictures, which is convenient for the user to use the plug-in better.
-version: 1.0.0
+description: Nineoldwidget is a component used to encapsulate the nine palace display of pictures.
+version: 1.0.1
 homepage: https://github.com/lanzhu1993/flutter_nineold
 
 environment:
