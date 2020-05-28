@@ -59,8 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text("Flutter Nine Old"),
       ),
       body: Container(
-        margin: EdgeInsets.all(40),
-        child: NineOldWidget(images[count]),
+        child: NineOldWidget(images:images[count]),
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),

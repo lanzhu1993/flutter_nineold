@@ -3,12 +3,17 @@ import 'package:nineold/loader/image_with_loader.dart';
 import 'package:nineold/watcher/gallery_watcher.dart';
 
 class NineOldWidget extends StatelessWidget {
-  const NineOldWidget(this.images);
-
   final List<String> images;
+
+  NineOldWidget({this.images});
+
+  double width;
+  double height;
 
   @override
   Widget build(BuildContext context) {
+    width = MediaQuery.of(context).size.width;
+    height = MediaQuery.of(context).size.height;
     return _buildImagesFrame(context);
   }
 
@@ -42,8 +47,8 @@ class NineOldWidget extends StatelessWidget {
   Widget _buildSingleImage(BuildContext context) {
     return ConstrainedBox(
       constraints: BoxConstraints(
-        maxHeight: 296,
-        maxWidth: 296,
+        maxHeight: width,
+        maxWidth: width,
       ),
       child: _aspectRatioImage(context, index: 0, aspectRatio: 1),
     );
@@ -52,8 +57,8 @@ class NineOldWidget extends StatelessWidget {
   Widget _buildTwoImages(BuildContext context) {
     return ConstrainedBox(
       constraints: BoxConstraints(
-        maxWidth: 296,
-        maxHeight: 148,
+        maxWidth: width,
+        maxHeight: width / 2,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -69,17 +74,19 @@ class NineOldWidget extends StatelessWidget {
   Widget _buildThreeImages(BuildContext context) {
     return ConstrainedBox(
       constraints: BoxConstraints(
-        maxWidth: 296,
-        maxHeight: 196,
+        maxWidth: width,
+        maxHeight: (width * 2 / 3) + 1,
       ),
       child: Row(
         mainAxisSize: MainAxisSize.max,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Expanded(flex: 196, child: _aspectRatioImage(context, index: 0)),
+          Expanded(
+              flex: (width * 2 ~/ 3),
+              child: _aspectRatioImage(context, index: 0)),
           _spacer(),
           Expanded(
-            flex: 97,
+            flex: width ~/ 3,
             child: Column(
               children: <Widget>[
                 _aspectRatioImage(context, index: 1),
@@ -96,8 +103,8 @@ class NineOldWidget extends StatelessWidget {
   Widget _buildFourImages(BuildContext context) {
     return ConstrainedBox(
       constraints: BoxConstraints(
-        maxWidth: 296,
-        maxHeight: 296,
+        maxWidth: width,
+        maxHeight: width,
       ),
       child: Column(
         children: <Widget>[
@@ -124,8 +131,8 @@ class NineOldWidget extends StatelessWidget {
   Widget _buildFiveImages(BuildContext context) {
     return ConstrainedBox(
       constraints: BoxConstraints(
-        maxWidth: 296,
-        maxHeight: 248,
+        maxWidth: width,
+        maxHeight: width * 5 / 6,
       ),
       child: Column(
         children: <Widget>[
@@ -154,8 +161,8 @@ class NineOldWidget extends StatelessWidget {
   Widget _buildSixImages(BuildContext context) {
     return ConstrainedBox(
       constraints: BoxConstraints(
-        maxWidth: 296,
-        maxHeight: 200,
+        maxWidth: width,
+        maxHeight: width * 2 / 3,
       ),
       child: Column(
         children: <Widget>[
@@ -186,8 +193,8 @@ class NineOldWidget extends StatelessWidget {
   Widget _buildSevenImages(BuildContext context) {
     return ConstrainedBox(
       constraints: BoxConstraints(
-        maxWidth: 296,
-        maxHeight: 296,
+        maxWidth: width,
+        maxHeight: width,
       ),
       child: Column(
         children: <Widget>[
@@ -228,8 +235,8 @@ class NineOldWidget extends StatelessWidget {
   Widget _buildEightImages(BuildContext context) {
     return ConstrainedBox(
       constraints: BoxConstraints(
-        maxWidth: 296,
-        maxHeight: 296,
+        maxWidth: width,
+        maxHeight: width,
       ),
       child: Column(
         children: <Widget>[
@@ -270,8 +277,8 @@ class NineOldWidget extends StatelessWidget {
   Widget _buildNineImages(BuildContext context) {
     return ConstrainedBox(
       constraints: BoxConstraints(
-        maxWidth: 296,
-        maxHeight: 296,
+        maxWidth: width,
+        maxHeight: width,
       ),
       child: Column(
         children: <Widget>[
