@@ -1,11 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:nineold/listener/nine_old_press_listener.dart';
 import 'package:nineold/loader/image_with_loader.dart';
 import 'package:nineold/watcher/gallery_watcher.dart';
 
 class NineOldWidget extends StatelessWidget {
   final List<String> images;
+  final TextStyle moreStyle;
 
-  NineOldWidget({this.images});
+  final Color backgroundColor;
+  final double strokeWidth;
+  final Color valueColor;
+
+  final OnLongPressListener onLongPressListener;
+
+  NineOldWidget(
+      {this.images,
+      this.moreStyle,
+      this.backgroundColor,
+      this.strokeWidth,
+      this.valueColor,
+      this.onLongPressListener});
 
   double width;
   double height;
@@ -348,8 +362,9 @@ class NineOldWidget extends StatelessWidget {
                 child: Center(
                   child: Text(
                     "+$valueCount",
-                    style:
-                        TextStyle(fontSize: 32, fontFamily: "Poppins-Regular"),
+                    style: null == moreStyle
+                        ? TextStyle(fontSize: 32, fontFamily: "Poppins-Regular")
+                        : moreStyle,
                   ),
                 ),
               ),
@@ -376,7 +391,12 @@ class NineOldWidget extends StatelessWidget {
             aspectRatio: aspectRatio,
             child: Hero(
               tag: images[index],
-              child: ImageWithLoader(url: images[index]),
+              child: ImageWithLoader(
+                url: images[index],
+                backgroundColor: backgroundColor,
+                valueColor: valueColor,
+                strokeWidth: strokeWidth,
+              ),
             )),
         onTap: () {
           _openGalleryWatcher(context, index);
@@ -394,6 +414,7 @@ class NineOldWidget extends StatelessWidget {
           ),
           initialIndex: index,
           scrollDirection: Axis.horizontal,
+          onLongPressListener: onLongPressListener,
         ),
       ),
     );

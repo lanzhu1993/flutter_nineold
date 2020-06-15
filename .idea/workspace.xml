@@ -3,9 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="8bf674ce-b7a4-4643-86ec-db3694faf1c1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/loader/image_with_loader.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/loader/image_with_loader.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/watcher/gallery_watcher.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/watcher/gallery_watcher.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/widget/nine_old_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widget/nine_old_widget.dart" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +19,11 @@
   </component>
   <component name="ProjectId" id="1Z1RjG8UgopnmgzOvon3WnGRXQc" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
@@ -31,18 +38,6 @@
       <recent name="$PROJECT_DIR$/example/assets" />
       <recent name="$PROJECT_DIR$/lib" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -69,5 +64,11 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="435" height="42" key="javadoc.popup.new" timestamp="1592225452375">
+      <screen x="-117" y="-1057" width="1920" height="1057" />
+    </state>
+    <state width="435" height="42" key="javadoc.popup.new/0.23.1440.829/-117.-1057.1920.1057@-117.-1057.1920.1057" timestamp="1592225452375" />
   </component>
 </project>

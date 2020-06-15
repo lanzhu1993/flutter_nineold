@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:nineold/listener/nine_old_press_listener.dart';
 import 'package:photo_view/photo_view.dart';
 import 'package:photo_view/photo_view_gallery.dart';
 
@@ -13,6 +14,7 @@ class GalleryPhotoViewWrapper extends StatefulWidget {
     @required this.thumbGalleryItems,
     this.originGalleryItems,
     this.scrollDirection = Axis.horizontal,
+    this.onLongPressListener,
   }) : pageController = PageController(initialPage: initialIndex);
 
   final LoadingBuilder loadingBuilder;
@@ -24,6 +26,7 @@ class GalleryPhotoViewWrapper extends StatefulWidget {
   final List<String> thumbGalleryItems;
   final List<String> originGalleryItems;
   final Axis scrollDirection;
+  final OnLongPressListener onLongPressListener;
 
   @override
   State<StatefulWidget> createState() {
@@ -54,50 +57,57 @@ class _GalleryPhotoViewWrapperState extends State<GalleryPhotoViewWrapper> {
         constraints: BoxConstraints.expand(
           height: MediaQuery.of(context).size.height,
         ),
-        child: Stack(
-          alignment: Alignment.bottomRight,
-          children: <Widget>[
-            PhotoViewGallery.builder(
-              scrollPhysics: const BouncingScrollPhysics(),
-              builder: _buildItem,
-              itemCount: widget.thumbGalleryItems.length,
-              loadingBuilder: widget.loadingBuilder,
-              backgroundDecoration: widget.backgroundDecoration,
-              pageController: widget.pageController,
-              onPageChanged: onPageChanged,
-              scrollDirection: widget.scrollDirection,
-            ),
-            Positioned(
-              bottom: 20,
-              right: 20,
-              child: Container(
-                child: Text(
-                  "${currentIndex + 1}" +
-                      "/" +
-                      "${widget.thumbGalleryItems.length}",
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 17.0,
-                    decoration: null,
+        child: InkWell(
+          onLongPress: (){
+            if(null != widget.onLongPressListener){
+              widget.onLongPressListener.onLongPress();
+            }
+          },
+          child: Stack(
+            alignment: Alignment.bottomRight,
+            children: <Widget>[
+              PhotoViewGallery.builder(
+                scrollPhysics: const BouncingScrollPhysics(),
+                builder: _buildItem,
+                itemCount: widget.thumbGalleryItems.length,
+                loadingBuilder: widget.loadingBuilder,
+                backgroundDecoration: widget.backgroundDecoration,
+                pageController: widget.pageController,
+                onPageChanged: onPageChanged,
+                scrollDirection: widget.scrollDirection,
+              ),
+              Positioned(
+                bottom: 20,
+                right: 20,
+                child: Container(
+                  child: Text(
+                    "${currentIndex + 1}" +
+                        "/" +
+                        "${widget.thumbGalleryItems.length}",
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 17.0,
+                      decoration: null,
+                    ),
                   ),
                 ),
               ),
-            ),
-            Positioned(
-              top: 30,
-              left: 0,
-              child: IconButton(
-                iconSize: 20,
-                icon: Icon(
-                  Icons.arrow_back,
-                  color: Colors.white,
+              Positioned(
+                top: 30,
+                left: 0,
+                child: IconButton(
+                  iconSize: 20,
+                  icon: Icon(
+                    Icons.arrow_back,
+                    color: Colors.white,
+                  ),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
                 ),
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-              ),
-            )
-          ],
+              )
+            ],
+          ),
         ),
       ),
     );
