@@ -14,7 +14,7 @@
 ```
 dependencies:
   ...
-    nineold: ^1.2.0
+    nineold: ^1.3.0
 ```
 
 关于如何运行flutter项目, 参考官方文档[documentation](https://flutter.io/).
@@ -22,9 +22,18 @@ dependencies:
 
 # 版本更新
 
-1.增加缩略图显示，原图查看
+## 1.3.0
 
-2.增加查看原图返回事件
+1.增加查看图片长按事件回调
+
+2.支持自定义加载框，以及更多图片文字样式
+
+
+## 1.2.0
+
+1.适配屏幕宽高显示
+
+2.支持动态显示9+以上图片
 
 
 # 使用方法
@@ -70,27 +79,40 @@ class _MyHomePageState extends State<MyHomePage> {
     return list;
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Flutter Nine Old"),
-      ),
-      body: Container(
-        margin: EdgeInsets.all(40),
-        child: NineOldWidget(images[count]),
-      ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        onPressed: () {
-          setState(() {
-            count++;
-            images.add(getData().sublist(0, count % 15));
-          });
-        },
-      ),
-    );
-  }
+ @override
+   Widget build(BuildContext context) {
+     return Scaffold(
+       appBar: AppBar(
+         title: Text("Flutter Nine Old"),
+       ),
+       body: Container(
+         child: NineOldWidget(
+           images: images[count],
+           onLongPressListener: () {
+             //长按事件回调
+             print("长按事件回调");
+           },
+           backgroundColor: Colors.grey,//加载背景颜色
+           valueColor: Colors.blue,//加载进度条颜色
+           strokeWidth: 4,//加载进度条宽度
+           moreStyle: TextStyle(
+             fontSize: 14,
+             color: Colors.orange
+           ),//更多加号样式
+
+         ),
+       ),
+       floatingActionButton: FloatingActionButton(
+         child: Icon(Icons.add),
+         onPressed: () {
+           setState(() {
+             count++;
+             images.add(getData().sublist(0, count % 15));
+           });
+         },
+       ),
+     );
+   }
 }
 ```
 

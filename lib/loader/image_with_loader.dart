@@ -6,9 +6,9 @@ class ImageWithLoader extends StatelessWidget {
       {this.url,
       this.fit = BoxFit.cover,
       this.loaderSize = 48.0,
-      this.backgroundColor,
-      this.strokeWidth,
-      this.valueColor});
+      this.backgroundColor = Colors.white,
+      this.strokeWidth = 3,
+      this.valueColor = Colors.tealAccent});
 
   final String url;
   final BoxFit fit;
@@ -30,7 +30,10 @@ class ImageWithLoader extends StatelessWidget {
             child: SizedBox(
               width: loaderSize,
               height: loaderSize,
-              child: _buildCircularProgressIndicator(),
+              child: _buildCircularProgressIndicator(
+                  backgroundColor: backgroundColor,
+                  strokeWidth: strokeWidth,
+                  valueColor: valueColor),
             ),
           ),
         ),
@@ -47,9 +50,8 @@ class ImageWithLoader extends StatelessWidget {
 CircularProgressIndicator _buildCircularProgressIndicator(
     {Color backgroundColor, double strokeWidth, Color valueColor}) {
   return CircularProgressIndicator(
-    backgroundColor: null == backgroundColor ? Colors.white : backgroundColor,
-    strokeWidth: null == strokeWidth ? 3 : strokeWidth,
-    valueColor: AlwaysStoppedAnimation<Color>(
-        null == valueColor ? Colors.tealAccent : valueColor),
+    backgroundColor: backgroundColor,
+    strokeWidth: strokeWidth,
+    valueColor: AlwaysStoppedAnimation<Color>(valueColor),
   );
 }

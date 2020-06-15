@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:nineold/listener/nine_old_press_listener.dart';
 import 'package:nineold/loader/image_with_loader.dart';
 import 'package:nineold/watcher/gallery_watcher.dart';
 
@@ -11,7 +10,7 @@ class NineOldWidget extends StatelessWidget {
   final double strokeWidth;
   final Color valueColor;
 
-  final OnLongPressListener onLongPressListener;
+  final OnLongPressCallback onLongPressListener;
 
   NineOldWidget(
       {this.images,
