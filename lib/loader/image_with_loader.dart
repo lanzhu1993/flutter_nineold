@@ -3,12 +3,12 @@ import 'package:transparent_image/transparent_image.dart';
 
 class ImageWithLoader extends StatelessWidget {
   const ImageWithLoader(
-      {this.url,
+      {@required this.url,
+      @required this.backgroundColor,
+      @required this.strokeWidth,
+      @required this.valueColor,
       this.fit = BoxFit.cover,
-      this.loaderSize = 48.0,
-      this.backgroundColor = Colors.white,
-      this.strokeWidth = 3,
-      this.valueColor = Colors.tealAccent});
+      this.loaderSize = 48.0});
 
   final String url;
   final BoxFit fit;
@@ -31,9 +31,9 @@ class ImageWithLoader extends StatelessWidget {
               width: loaderSize,
               height: loaderSize,
               child: _buildCircularProgressIndicator(
-                  backgroundColor: backgroundColor,
-                  strokeWidth: strokeWidth,
-                  valueColor: valueColor),
+                  cpBackgroundColor: backgroundColor,
+                  cpStrokeWidth: strokeWidth,
+                  cpValueColor: valueColor),
             ),
           ),
         ),
@@ -48,10 +48,10 @@ class ImageWithLoader extends StatelessWidget {
 }
 
 CircularProgressIndicator _buildCircularProgressIndicator(
-    {Color backgroundColor, double strokeWidth, Color valueColor}) {
+    {Color cpBackgroundColor, double cpStrokeWidth, Color cpValueColor}) {
   return CircularProgressIndicator(
-    backgroundColor: backgroundColor,
-    strokeWidth: strokeWidth,
-    valueColor: AlwaysStoppedAnimation<Color>(valueColor),
+    backgroundColor: cpBackgroundColor,
+    strokeWidth: cpStrokeWidth,
+    valueColor: AlwaysStoppedAnimation<Color>(cpValueColor),
   );
 }

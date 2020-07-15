@@ -13,11 +13,11 @@ class NineOldWidget extends StatelessWidget {
   final OnLongPressCallback onLongPressListener;
 
   NineOldWidget(
-      {this.images,
+      {@required this.images,
       this.moreStyle,
-      this.backgroundColor,
-      this.strokeWidth,
-      this.valueColor,
+      this.backgroundColor = Colors.white,
+      this.strokeWidth = 3,
+      this.valueColor = Colors.tealAccent,
       this.onLongPressListener});
 
   double width;

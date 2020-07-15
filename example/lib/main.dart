@@ -51,8 +51,6 @@ class _MyHomePageState extends State<MyHomePage> {
     list.add(
         "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=244450851,2728981198&fm=26&gp=0.jpg");
     list.add(
-        "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=882251069,3759945909&fm=11&gp=0.jpg");
-    list.add(
         "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2083759825,3454063564&fm=26&gp=0.jpg");
     list.add(
         "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=310077658,2097249993&fm=11&gp=0.jpg");
@@ -64,6 +62,8 @@ class _MyHomePageState extends State<MyHomePage> {
         "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3153722339,140981551&fm=26&gp=0.jpg");
     list.add(
         "https://t8.baidu.com/it/u=3571592872,3353494284&fm=79&app=86&size=h300&n=0&g=4n&f=jpeg?sec=1584605109&t=4c346851d3f4f4cf76439fe6440ffe9f");
+    list.add(
+        "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1594817167403&di=87226dc3d6b70a7e02722b9f9bd9f33a&imgtype=0&src=http%3A%2F%2Ft9.baidu.com%2Fit%2Fu%3D1307125826%2C3433407105%26fm%3D79%26app%3D86%26f%3DJPEG%3Fw%3D5760%26h%3D3240");
     return list;
   }
 
@@ -75,19 +75,18 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Container(
         child: NineOldWidget(
-          images: images[count],
-          onLongPressListener: () {
+          images: images[count],//必填
+          onLongPressListener: (position) {//可选
             //长按事件回调
-            print("长按事件回调");
+            print("长按事件回调当前位置 ： $position");
           },
-          backgroundColor: Colors.white,//加载背景颜色
-          valueColor: Colors.red,//加载进度条颜色
-          strokeWidth: 4,//加载进度条宽度
-          moreStyle: TextStyle(
-            fontSize: 28,
-            color: Colors.orange
-          ),//更多加号样式
-
+          backgroundColor: Colors.white,//可选
+          //加载背景颜色
+          valueColor: Colors.red,//可选
+          //加载进度条颜色
+          strokeWidth: 4,//可选
+          //加载进度条宽度
+          moreStyle: TextStyle(fontSize: 28, color: Colors.orange), //更多加号样式
         ),
       ),
       floatingActionButton: FloatingActionButton(

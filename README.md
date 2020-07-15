@@ -22,6 +22,12 @@ dependencies:
 
 # 版本更新
 
+## 1.3.1
+
+1.图片长按回调图片位置
+
+2.修复图片显示错位bug
+
 ## 1.3.0
 
 1.增加查看图片长按事件回调
@@ -87,19 +93,18 @@ class _MyHomePageState extends State<MyHomePage> {
        ),
        body: Container(
          child: NineOldWidget(
-           images: images[count],
-           onLongPressListener: () {
+           images: images[count],//必填
+           onLongPressListener: (position) {//可选
              //长按事件回调
-             print("长按事件回调");
+             print("长按事件回调当前位置 ： $position");
            },
-           backgroundColor: Colors.grey,//加载背景颜色
-           valueColor: Colors.blue,//加载进度条颜色
-           strokeWidth: 4,//加载进度条宽度
-           moreStyle: TextStyle(
-             fontSize: 14,
-             color: Colors.orange
-           ),//更多加号样式
-
+           backgroundColor: Colors.white,//可选
+           //加载背景颜色
+           valueColor: Colors.red,//可选
+           //加载进度条颜色
+           strokeWidth: 4,//可选
+           //加载进度条宽度
+           moreStyle: TextStyle(fontSize: 28, color: Colors.orange), //更多加号样式
          ),
        ),
        floatingActionButton: FloatingActionButton(
@@ -115,6 +120,20 @@ class _MyHomePageState extends State<MyHomePage> {
    }
 }
 ```
+
+
+NineOldWidget控件构造方法以及参数设置
+
+```
+  NineOldWidget(
+      {@required this.images,
+      this.moreStyle,
+      this.backgroundColor = Colors.white,
+      this.strokeWidth = 3,
+      this.valueColor = Colors.tealAccent,
+      this.onLongPressListener});
+```
+
 
 
 

@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:photo_view/photo_view.dart';
 import 'package:photo_view/photo_view_gallery.dart';
 
-typedef OnLongPressCallback = void Function();
-
+typedef OnLongPressCallback = void Function(int position);
 
 class GalleryPhotoViewWrapper extends StatefulWidget {
   GalleryPhotoViewWrapper({
@@ -30,7 +29,6 @@ class GalleryPhotoViewWrapper extends StatefulWidget {
   final Axis scrollDirection;
 
   final OnLongPressCallback onLongPressListener;
-
 
   @override
   State<StatefulWidget> createState() {
@@ -62,7 +60,11 @@ class _GalleryPhotoViewWrapperState extends State<GalleryPhotoViewWrapper> {
           height: MediaQuery.of(context).size.height,
         ),
         child: InkWell(
-          onLongPress: widget.onLongPressListener,
+          onLongPress: () {
+            if (null != widget.onLongPressListener) {
+              widget.onLongPressListener(currentIndex);
+            }
+          },
           child: Stack(
             alignment: Alignment.bottomRight,
             children: <Widget>[

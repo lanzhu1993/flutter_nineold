@@ -6,18 +6,16 @@
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/listener/nine_old_press_listener.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/loader/image_with_loader.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/loader/image_with_loader.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/watcher/gallery_watcher.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/watcher/gallery_watcher.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/widget/nine_old_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widget/nine_old_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nineold.iml" beforeDir="false" afterPath="$PROJECT_DIR$/nineold.iml" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Nexus_5X_API_27" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -51,18 +49,6 @@
       <recent name="$PROJECT_DIR$/lib" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -90,9 +76,30 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state width="435" height="42" key="javadoc.popup.new" timestamp="1592225452375">
+    <state width="1878" height="303" key="GridCell.Tab.0.bottom" timestamp="1594806505853">
+      <screen x="-117" y="-1080" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="303" key="GridCell.Tab.0.bottom/0.0.1440.900/-117.-1080.1920.1080@-117.-1080.1920.1080" timestamp="1594806505853" />
+    <state width="1878" height="303" key="GridCell.Tab.0.center" timestamp="1594806505851">
+      <screen x="-117" y="-1080" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="303" key="GridCell.Tab.0.center/0.0.1440.900/-117.-1080.1920.1080@-117.-1080.1920.1080" timestamp="1594806505851" />
+    <state width="1878" height="303" key="GridCell.Tab.0.left" timestamp="1594806505850">
+      <screen x="-117" y="-1080" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="303" key="GridCell.Tab.0.left/0.0.1440.900/-117.-1080.1920.1080@-117.-1080.1920.1080" timestamp="1594806505850" />
+    <state width="1878" height="303" key="GridCell.Tab.0.right" timestamp="1594806505852">
+      <screen x="-117" y="-1080" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="303" key="GridCell.Tab.0.right/0.0.1440.900/-117.-1080.1920.1080@-117.-1080.1920.1080" timestamp="1594806505852" />
+    <state x="279" y="-947" key="SettingsEditor" timestamp="1592272177253">
       <screen x="-117" y="-1057" width="1920" height="1057" />
     </state>
+    <state x="279" y="-947" key="SettingsEditor/0.23.1440.829/-117.-1057.1920.1057@-117.-1057.1920.1057" timestamp="1592272177253" />
+    <state width="435" height="43" key="javadoc.popup.new" timestamp="1594806344633">
+      <screen x="-117" y="-1080" width="1920" height="1080" />
+    </state>
+    <state width="435" height="43" key="javadoc.popup.new/0.0.1440.900/-117.-1080.1920.1080@-117.-1080.1920.1080" timestamp="1594806344633" />
     <state width="435" height="42" key="javadoc.popup.new/0.23.1440.829/-117.-1057.1920.1057@-117.-1057.1920.1057" timestamp="1592225452375" />
   </component>
 </project>
