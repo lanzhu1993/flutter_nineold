@@ -389,7 +389,7 @@ class NineOldWidget extends StatelessWidget {
         child: AspectRatio(
             aspectRatio: aspectRatio,
             child: Hero(
-              tag: images[index],
+              tag: images[index] + index.toString(),
               child: ImageWithLoader(
                 url: images[index],
                 backgroundColor: backgroundColor,

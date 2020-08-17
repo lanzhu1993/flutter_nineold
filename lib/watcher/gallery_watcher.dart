@@ -123,12 +123,13 @@ class _GalleryPhotoViewWrapperState extends State<GalleryPhotoViewWrapper> {
     } else {
       item = widget.originGalleryItems[index];
     }
+    var tag = item + index.toString();
     return PhotoViewGalleryPageOptions(
       imageProvider: CachedNetworkImageProvider(item),
       initialScale: PhotoViewComputedScale.contained,
       minScale: PhotoViewComputedScale.contained * (0.5 + index / 10),
       maxScale: PhotoViewComputedScale.covered * 1.1,
-      heroAttributes: PhotoViewHeroAttributes(tag: item),
+      heroAttributes: PhotoViewHeroAttributes(tag: tag),
     );
   }
 }

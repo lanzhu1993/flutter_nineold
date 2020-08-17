@@ -14,13 +14,20 @@
 ```
 dependencies:
   ...
-    nineold: ^1.3.1
+    nineold: ^1.3.2
 ```
 
 关于如何运行flutter项目, 参考官方文档[documentation](https://flutter.io/).
 
 
 # 版本更新
+
+
+## 1.3.2
+
+1.图片Hero动画相同地址不能加载
+
+2.修复Hero动画黑屏显示
 
 ## 1.3.1
 
