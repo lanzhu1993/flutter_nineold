@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8bf674ce-b7a4-4643-86ec-db3694faf1c1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/watcher/gallery_watcher.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/watcher/gallery_watcher.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -104,9 +102,10 @@
     </state>
     <state x="279" y="-947" key="SettingsEditor/0.23.1440.829/-117.-1057.1920.1057@-117.-1057.1920.1057" timestamp="1592272177253" />
     <state x="297" y="111" key="SettingsEditor/0.23.1440.841@0.23.1440.841" timestamp="1597628798197" />
-    <state x="380" y="283" key="com.intellij.ide.util.TipDialog" timestamp="1597628618724">
-      <screen x="0" y="23" width="1440" height="841" />
+    <state x="380" y="273" key="com.intellij.ide.util.TipDialog" timestamp="1600311093522">
+      <screen x="0" y="23" width="1440" height="808" />
     </state>
+    <state x="380" y="273" key="com.intellij.ide.util.TipDialog/0.23.1440.808@0.23.1440.808" timestamp="1600311093522" />
     <state x="380" y="283" key="com.intellij.ide.util.TipDialog/0.23.1440.841@0.23.1440.841" timestamp="1597628618724" />
     <state x="384" y="206" width="693" height="488" key="find.popup" timestamp="1597631213206">
       <screen x="0" y="23" width="1440" height="841" />
