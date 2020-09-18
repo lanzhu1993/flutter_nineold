@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nineold/loader/image_with_loader.dart';
 import 'package:nineold/watcher/gallery_watcher.dart';
+import 'package:uuid/uuid.dart';
 
 class NineOldWidget extends StatelessWidget {
   final List<String> images;
@@ -11,6 +12,9 @@ class NineOldWidget extends StatelessWidget {
   final Color valueColor;
 
   final OnLongPressCallback onLongPressListener;
+
+  final List<String> tagItems = [];
+
 
   NineOldWidget(
       {@required this.images,
@@ -27,6 +31,9 @@ class NineOldWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     width = MediaQuery.of(context).size.width;
     height = MediaQuery.of(context).size.height;
+    images.forEach((element) {
+      tagItems.add(Uuid().v1());
+    });
     return _buildImagesFrame(context);
   }
 
@@ -389,7 +396,7 @@ class NineOldWidget extends StatelessWidget {
         child: AspectRatio(
             aspectRatio: aspectRatio,
             child: Hero(
-              tag: images[index] + index.toString(),
+              tag: images[index] + tagItems[index],
               child: ImageWithLoader(
                 url: images[index],
                 backgroundColor: backgroundColor,
@@ -408,6 +415,7 @@ class NineOldWidget extends StatelessWidget {
       MaterialPageRoute(
         builder: (context) => GalleryPhotoViewWrapper(
           thumbGalleryItems: images,
+          tagItems: tagItems,
           backgroundDecoration: const BoxDecoration(
             color: Colors.black,
           ),

@@ -13,6 +13,7 @@ class GalleryPhotoViewWrapper extends StatefulWidget {
     this.maxScale,
     this.initialIndex,
     @required this.thumbGalleryItems,
+    @required this.tagItems,
     this.originGalleryItems,
     this.scrollDirection = Axis.horizontal,
     this.onLongPressListener,
@@ -26,6 +27,7 @@ class GalleryPhotoViewWrapper extends StatefulWidget {
   final PageController pageController;
   final List<String> thumbGalleryItems;
   final List<String> originGalleryItems;
+  final List<String> tagItems;
   final Axis scrollDirection;
 
   final OnLongPressCallback onLongPressListener;
@@ -116,7 +118,7 @@ class _GalleryPhotoViewWrapperState extends State<GalleryPhotoViewWrapper> {
     } else {
       item = widget.originGalleryItems[index];
     }
-    var tag = item + index.toString();
+    var tag = item + widget.tagItems[index];
     return PhotoViewGalleryPageOptions(
       imageProvider: CachedNetworkImageProvider(item),
       initialScale: PhotoViewComputedScale.contained,

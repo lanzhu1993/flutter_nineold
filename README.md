@@ -14,7 +14,7 @@
 ```
 dependencies:
   ...
-    nineold: ^1.3.2
+    nineold: ^1.3.3
 ```
 
 关于如何运行flutter项目, 参考官方文档[documentation](https://flutter.io/).
@@ -22,6 +22,9 @@ dependencies:
 
 # 版本更新
 
+## 1.3.3
+
+1.修复相同图片地址Hero动画tag相同问题
 
 ## 1.3.2
 
