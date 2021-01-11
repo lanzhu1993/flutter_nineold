@@ -22,6 +22,10 @@ dependencies:
 
 # 版本更新
 
+## 1.3.4
+
+1.更新pub依赖以及flutter版本
+
 ## 1.3.3
 
 1.修复相同图片地址Hero动画tag相同问题
