@@ -14,7 +14,7 @@
 ```
 dependencies:
   ...
-    nineold: ^1.3.3
+    nineold: ^1.3.4
 ```
 
 关于如何运行flutter项目, 参考官方文档[documentation](https://flutter.io/).
