@@ -14,13 +14,18 @@
 ```
 dependencies:
   ...
-    nineold: ^1.3.4
+    nineold: ^2.0.0
 ```
 
 关于如何运行flutter项目, 参考官方文档[documentation](https://flutter.io/).
 
 
 # 版本更新
+## 2.0.0
+
+1.更新pub依赖以及flutter版本
+2.支持图片加载失败自定义显示
+
 
 ## 1.3.4
 
@@ -103,39 +108,42 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Widget _buildActiveItem(int index, List<String> photos) {
-    return Container(
-      margin: EdgeInsets.all(10),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          _buildActiveItemHeader(index),
-          null != photos || photos.isNotEmpty
-              ? NineOldWidget(
-                  images: photos,
-                  //必填
-                  onLongPressListener: (position) {
-                    //可选
-                    //长按事件回调
-                    print("长按事件回调当前位置 ： $position");
-                  },
-                  backgroundColor: Colors.white,
-                  //可选
-                  //加载背景颜色
-                  valueColor: Colors.red,
-                  //可选
-                  //加载进度条颜色
-                  strokeWidth: 4,
-                  //可选
-                  //加载进度条宽度
-                  moreStyle:
-                      TextStyle(fontSize: 28, color: Colors.orange), //更多加号样式
-                )
-              : SizedBox()
-        ],
-      ),
-    );
-  }
+     return Container(
+       margin: EdgeInsets.all(10),
+       child: Column(
+         mainAxisAlignment: MainAxisAlignment.center,
+         crossAxisAlignment: CrossAxisAlignment.center,
+         children: [
+           _buildActiveItemHeader(index),
+           null != photos || photos.isNotEmpty
+               ? NineOldWidget(
+                   images: photos,
+                   //必填
+                   onLongPressListener: (position) {
+                     //可选
+                     //长按事件回调
+                     print("长按事件回调当前位置 ： $position");
+                   },
+                   backgroundColor: Colors.white,
+                   //可选
+                   //加载背景颜色
+                   valueColor: Colors.red,
+                   //可选
+                   //加载进度条颜色
+                   strokeWidth: 4,
+                   //可选
+                   //加载进度条宽度
+                   moreStyle:
+                       TextStyle(fontSize: 28, color: Colors.orange), //更多加号样式
+                   //可选
+                   //资源加载失败显示
+                   errorWidget: Icon(Icons.error_outline_rounded),
+                 )
+               : SizedBox()
+         ],
+       ),
+     );
+   }
 
   Widget _buildActiveItemHeader(int index) {
     return Container(
@@ -211,7 +219,8 @@ NineOldWidget控件构造方法以及参数设置
       this.backgroundColor = Colors.white,
       this.strokeWidth = 3,
       this.valueColor = Colors.tealAccent,
-      this.onLongPressListener});
+      this.onLongPressListener,
+      this.errorWidget});
 ```
 
 

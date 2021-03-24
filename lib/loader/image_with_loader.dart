@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import "package:flutter/material.dart";
 import 'package:transparent_image/transparent_image.dart';
 
@@ -7,6 +8,7 @@ class ImageWithLoader extends StatelessWidget {
       @required this.backgroundColor,
       @required this.strokeWidth,
       @required this.valueColor,
+      this.errorWidget,
       this.fit = BoxFit.cover,
       this.loaderSize = 48.0});
 
@@ -17,6 +19,7 @@ class ImageWithLoader extends StatelessWidget {
   final Color backgroundColor;
   final double strokeWidth;
   final Color valueColor;
+  final Widget errorWidget;
 
   @override
   Widget build(BuildContext context) {
@@ -26,32 +29,25 @@ class ImageWithLoader extends StatelessWidget {
       children: <Widget>[
         Container(
           color: Colors.grey,
-          child: Center(
+        ),
+        CachedNetworkImage(
+          imageUrl: url,
+          fit: fit,
+          placeholder: (context, url) => Center(
             child: SizedBox(
               width: loaderSize,
               height: loaderSize,
-              child: _buildCircularProgressIndicator(
-                  cpBackgroundColor: backgroundColor,
-                  cpStrokeWidth: strokeWidth,
-                  cpValueColor: valueColor),
+              child: CircularProgressIndicator(
+                valueColor: AlwaysStoppedAnimation<Color>(valueColor),
+                backgroundColor: backgroundColor,
+                strokeWidth: strokeWidth,
+              ),
             ),
           ),
-        ),
-        FadeInImage.memoryNetwork(
-          image: url,
-          fit: fit,
-          placeholder: kTransparentImage,
-        ),
+          errorWidget: (context, url, error) =>
+              null == errorWidget ? Icon(Icons.error) : errorWidget,
+        )
       ],
     );
   }
-}
-
-CircularProgressIndicator _buildCircularProgressIndicator(
-    {Color cpBackgroundColor, double cpStrokeWidth, Color cpValueColor}) {
-  return CircularProgressIndicator(
-    backgroundColor: cpBackgroundColor,
-    strokeWidth: cpStrokeWidth,
-    valueColor: AlwaysStoppedAnimation<Color>(cpValueColor),
-  );
 }

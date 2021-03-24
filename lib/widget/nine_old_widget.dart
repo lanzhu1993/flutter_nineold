@@ -10,6 +10,7 @@ class NineOldWidget extends StatelessWidget {
   final Color backgroundColor;
   final double strokeWidth;
   final Color valueColor;
+  final Widget errorWidget;
 
   final OnLongPressCallback onLongPressListener;
 
@@ -22,7 +23,8 @@ class NineOldWidget extends StatelessWidget {
       this.backgroundColor = Colors.white,
       this.strokeWidth = 3,
       this.valueColor = Colors.tealAccent,
-      this.onLongPressListener});
+      this.onLongPressListener,
+      this.errorWidget});
 
   double width;
   double height;
@@ -402,6 +404,7 @@ class NineOldWidget extends StatelessWidget {
                 backgroundColor: backgroundColor,
                 valueColor: valueColor,
                 strokeWidth: strokeWidth,
+                errorWidget: errorWidget,
               ),
             )),
         onTap: () {

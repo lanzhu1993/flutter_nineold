@@ -84,6 +84,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   //加载进度条宽度
                   moreStyle:
                       TextStyle(fontSize: 28, color: Colors.orange), //更多加号样式
+                  //可选
+                  //资源加载失败显示
+                  errorWidget: Icon(Icons.error_outline_rounded),
                 )
               : SizedBox()
         ],
