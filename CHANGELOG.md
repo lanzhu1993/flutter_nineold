@@ -1,3 +1,8 @@
+## 3.0.0
+
+1.更新pub依赖以及flutter版本
+2.更新cached_network_image至3.0.0
+
 ## 2.0.0
 
 1.更新pub依赖以及flutter版本

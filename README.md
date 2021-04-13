@@ -14,13 +14,18 @@
 ```
 dependencies:
   ...
-    nineold: ^2.0.0
+    nineold: ^3.0.0
 ```
 
 关于如何运行flutter项目, 参考官方文档[documentation](https://flutter.io/).
 
 
 # 版本更新
+## 3.0.0
+
+1.更新pub依赖以及flutter版本
+2.更新cached_network_image至3.0.0
+
 ## 2.0.0
 
 1.更新pub依赖以及flutter版本
