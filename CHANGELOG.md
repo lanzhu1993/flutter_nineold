@@ -1,3 +1,8 @@
+## 3.1.0
+
+1.更新pub依赖以及flutter版本
+2.更新photo_view到0.12.0
+
 ## 3.0.0
 
 1.更新pub依赖以及flutter版本

@@ -14,13 +14,19 @@
 ```
 dependencies:
   ...
-    nineold: ^3.0.0
+    nineold: ^3.1.0
 ```
 
 关于如何运行flutter项目, 参考官方文档[documentation](https://flutter.io/).
 
 
+
 # 版本更新
+## 3.1.0
+
+1.更新pub依赖以及flutter版本
+2.更新photo_view到0.12.0
+
 ## 3.0.0
 
 1.更新pub依赖以及flutter版本
