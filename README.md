@@ -14,7 +14,7 @@
 ```
 dependencies:
   ...
-    nineold: ^3.1.0
+    nineold: ^3.2.0
 ```
 
 关于如何运行flutter项目, 参考官方文档[documentation](https://flutter.io/).
@@ -22,6 +22,10 @@ dependencies:
 
 
 # 版本更新
+## 3.2.0
+
+1.更新pub依赖以及flutter版本2.10.1
+
 ## 3.1.0
 
 1.更新pub依赖以及flutter版本
