@@ -7,22 +7,16 @@ typedef OnLongPressCallback = void Function(int position);
 
 class GalleryPhotoViewWrapper extends StatefulWidget {
   GalleryPhotoViewWrapper({
-    this.loadingBuilder,
-    this.backgroundDecoration,
-    this.minScale,
-    this.maxScale,
-    this.initialIndex,
-    @required this.thumbGalleryItems,
-    @required this.tagItems,
-    this.originGalleryItems,
+    required this.backgroundDecoration,
+    required this.initialIndex,
+    required this.thumbGalleryItems,
+    required this.tagItems,
+    required this.originGalleryItems,
     this.scrollDirection = Axis.horizontal,
-    this.onLongPressListener,
+    required this.onLongPressListener,
   }) : pageController = PageController(initialPage: initialIndex);
 
-  final LoadingBuilder loadingBuilder;
   final Decoration backgroundDecoration;
-  final dynamic minScale;
-  final dynamic maxScale;
   final int initialIndex;
   final PageController pageController;
   final List<String> thumbGalleryItems;
@@ -39,7 +33,7 @@ class GalleryPhotoViewWrapper extends StatefulWidget {
 }
 
 class _GalleryPhotoViewWrapperState extends State<GalleryPhotoViewWrapper> {
-  int currentIndex;
+  late int currentIndex;
 
   @override
   void initState() {
@@ -68,8 +62,9 @@ class _GalleryPhotoViewWrapperState extends State<GalleryPhotoViewWrapper> {
               scrollPhysics: const BouncingScrollPhysics(),
               builder: _buildItem,
               itemCount: widget.thumbGalleryItems.length,
-              loadingBuilder: widget.loadingBuilder,
-              backgroundDecoration: widget.backgroundDecoration,
+              backgroundDecoration: BoxDecoration(
+                color: Colors.black,
+              ),
               pageController: widget.pageController,
               onPageChanged: onPageChanged,
               scrollDirection: widget.scrollDirection,
@@ -112,8 +107,7 @@ class _GalleryPhotoViewWrapperState extends State<GalleryPhotoViewWrapper> {
 
   PhotoViewGalleryPageOptions _buildItem(BuildContext context, int index) {
     String item = "";
-    if (null == widget.originGalleryItems ||
-        widget.originGalleryItems.length == 0) {
+    if (widget.originGalleryItems.length == 0) {
       item = widget.thumbGalleryItems[index];
     } else {
       item = widget.originGalleryItems[index];

@@ -16,23 +16,17 @@ class NineOldWidget extends StatelessWidget {
 
   final List<String> tagItems = [];
 
-
   NineOldWidget(
-      {@required this.images,
-      this.moreStyle,
+      {required this.images,
+      required this.moreStyle,
       this.backgroundColor = Colors.white,
       this.strokeWidth = 3,
       this.valueColor = Colors.tealAccent,
-      this.onLongPressListener,
-      this.errorWidget});
-
-  double width;
-  double height;
+      required this.onLongPressListener,
+      required this.errorWidget});
 
   @override
   Widget build(BuildContext context) {
-    width = MediaQuery.of(context).size.width;
-    height = MediaQuery.of(context).size.height;
     images.forEach((element) {
       tagItems.add(Uuid().v1());
     });
@@ -66,21 +60,23 @@ class NineOldWidget extends StatelessWidget {
     }
   }
 
+  /// Build a picture and adapt it to the on-screen display
   Widget _buildSingleImage(BuildContext context) {
     return ConstrainedBox(
       constraints: BoxConstraints(
-        maxHeight: width,
-        maxWidth: width,
+        maxHeight: MediaQuery.of(context).size.width,
+        maxWidth: MediaQuery.of(context).size.width,
       ),
       child: _aspectRatioImage(context, index: 0, aspectRatio: 1),
     );
   }
 
+  /// Build two picture and adapt it to the on-screen display
   Widget _buildTwoImages(BuildContext context) {
     return ConstrainedBox(
       constraints: BoxConstraints(
-        maxWidth: width,
-        maxHeight: width / 2,
+        maxWidth: MediaQuery.of(context).size.width,
+        maxHeight: MediaQuery.of(context).size.width / 2,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -93,22 +89,23 @@ class NineOldWidget extends StatelessWidget {
     );
   }
 
+  /// Build three picture and adapt it to the on-screen display
   Widget _buildThreeImages(BuildContext context) {
     return ConstrainedBox(
       constraints: BoxConstraints(
-        maxWidth: width,
-        maxHeight: (width * 2 / 3) + 1,
+        maxWidth: MediaQuery.of(context).size.width,
+        maxHeight: (MediaQuery.of(context).size.width * 2 / 3) + 1,
       ),
       child: Row(
         mainAxisSize: MainAxisSize.max,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Expanded(
-              flex: (width * 2 ~/ 3),
+              flex: (MediaQuery.of(context).size.width * 2 ~/ 3),
               child: _aspectRatioImage(context, index: 0)),
           _spacer(),
           Expanded(
-            flex: width ~/ 3,
+            flex: MediaQuery.of(context).size.width ~/ 3,
             child: Column(
               children: <Widget>[
                 _aspectRatioImage(context, index: 1),
@@ -122,11 +119,12 @@ class NineOldWidget extends StatelessWidget {
     );
   }
 
+  /// Build four picture and adapt it to the on-screen display
   Widget _buildFourImages(BuildContext context) {
     return ConstrainedBox(
       constraints: BoxConstraints(
-        maxWidth: width,
-        maxHeight: width,
+        maxWidth: MediaQuery.of(context).size.width,
+        maxHeight: MediaQuery.of(context).size.width,
       ),
       child: Column(
         children: <Widget>[
@@ -150,11 +148,12 @@ class NineOldWidget extends StatelessWidget {
     );
   }
 
+  /// Build five picture and adapt it to the on-screen display
   Widget _buildFiveImages(BuildContext context) {
     return ConstrainedBox(
       constraints: BoxConstraints(
-        maxWidth: width,
-        maxHeight: width * 5 / 6,
+        maxWidth: MediaQuery.of(context).size.width,
+        maxHeight: MediaQuery.of(context).size.width * 5 / 6,
       ),
       child: Column(
         children: <Widget>[
@@ -180,11 +179,12 @@ class NineOldWidget extends StatelessWidget {
     );
   }
 
+  /// Build six picture and adapt it to the on-screen display
   Widget _buildSixImages(BuildContext context) {
     return ConstrainedBox(
       constraints: BoxConstraints(
-        maxWidth: width,
-        maxHeight: width * 2 / 3,
+        maxWidth: MediaQuery.of(context).size.width,
+        maxHeight: MediaQuery.of(context).size.width * 2 / 3,
       ),
       child: Column(
         children: <Widget>[
@@ -212,11 +212,12 @@ class NineOldWidget extends StatelessWidget {
     );
   }
 
+  /// Build seven picture and adapt it to the on-screen display
   Widget _buildSevenImages(BuildContext context) {
     return ConstrainedBox(
       constraints: BoxConstraints(
-        maxWidth: width,
-        maxHeight: width,
+        maxWidth: MediaQuery.of(context).size.width,
+        maxHeight: MediaQuery.of(context).size.width,
       ),
       child: Column(
         children: <Widget>[
@@ -254,11 +255,12 @@ class NineOldWidget extends StatelessWidget {
     );
   }
 
+  /// Build eight picture and adapt it to the on-screen display
   Widget _buildEightImages(BuildContext context) {
     return ConstrainedBox(
       constraints: BoxConstraints(
-        maxWidth: width,
-        maxHeight: width,
+        maxWidth: MediaQuery.of(context).size.width,
+        maxHeight: MediaQuery.of(context).size.width,
       ),
       child: Column(
         children: <Widget>[
@@ -296,11 +298,12 @@ class NineOldWidget extends StatelessWidget {
     );
   }
 
+  /// Build nine picture and adapt it to the on-screen display
   Widget _buildNineImages(BuildContext context) {
     return ConstrainedBox(
       constraints: BoxConstraints(
-        maxWidth: width,
-        maxHeight: width,
+        maxWidth: MediaQuery.of(context).size.width,
+        maxHeight: MediaQuery.of(context).size.width,
       ),
       child: Column(
         children: <Widget>[
@@ -347,10 +350,11 @@ class NineOldWidget extends StatelessWidget {
     );
   }
 
+  /// Build more than nine picture and adapt it to the on-screen display
   Widget _plusMorePictures(
     BuildContext context, {
-    int valueCount,
-    Widget child,
+    required int valueCount,
+    required Widget child,
   }) {
     if (valueCount <= 0) {
       return child;
@@ -389,9 +393,10 @@ class NineOldWidget extends StatelessWidget {
     );
   }
 
+  /// Build a picture ration Image to display
   Widget _aspectRatioImage(
     BuildContext context, {
-    int index,
+    required int index,
     double aspectRatio = 1,
   }) {
     return InkWell(
@@ -425,6 +430,7 @@ class NineOldWidget extends StatelessWidget {
           initialIndex: index,
           scrollDirection: Axis.horizontal,
           onLongPressListener: onLongPressListener,
+          originGalleryItems: images,
         ),
       ),
     );

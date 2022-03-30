@@ -1,14 +1,13 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import "package:flutter/material.dart";
-import 'package:transparent_image/transparent_image.dart';
 
 class ImageWithLoader extends StatelessWidget {
   const ImageWithLoader(
-      {@required this.url,
-      @required this.backgroundColor,
-      @required this.strokeWidth,
-      @required this.valueColor,
-      this.errorWidget,
+      {required this.url,
+      required this.backgroundColor,
+      required this.strokeWidth,
+      required this.valueColor,
+      required this.errorWidget,
       this.fit = BoxFit.cover,
       this.loaderSize = 48.0});
 
