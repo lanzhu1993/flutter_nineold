@@ -53,53 +53,61 @@ class _GalleryPhotoViewWrapperState extends State<GalleryPhotoViewWrapper> {
       body: Container(
         decoration: widget.backgroundDecoration,
         constraints: BoxConstraints.expand(
-          height: MediaQuery.of(context).size.height,
+          height: MediaQuery
+              .of(context)
+              .size
+              .height,
         ),
-        child: Stack(
-          alignment: Alignment.bottomRight,
-          children: <Widget>[
-            PhotoViewGallery.builder(
-              scrollPhysics: const BouncingScrollPhysics(),
-              builder: _buildItem,
-              itemCount: widget.thumbGalleryItems.length,
-              backgroundDecoration: BoxDecoration(
-                color: Colors.black,
+        child: InkWell(
+          onLongPress: () {
+            widget.onLongPressListener(currentIndex);
+          },
+          child: Stack(
+            alignment: Alignment.bottomRight,
+            children: <Widget>[
+              PhotoViewGallery.builder(
+                scrollPhysics: const BouncingScrollPhysics(),
+                builder: _buildItem,
+                itemCount: widget.thumbGalleryItems.length,
+                backgroundDecoration: BoxDecoration(
+                  color: Colors.black,
+                ),
+                pageController: widget.pageController,
+                onPageChanged: onPageChanged,
+                scrollDirection: widget.scrollDirection,
               ),
-              pageController: widget.pageController,
-              onPageChanged: onPageChanged,
-              scrollDirection: widget.scrollDirection,
-            ),
-            Positioned(
-              bottom: 20,
-              right: 20,
-              child: Container(
-                child: Text(
-                  "${currentIndex + 1}" +
-                      "/" +
-                      "${widget.thumbGalleryItems.length}",
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 17.0,
-                    decoration: null,
+              Positioned(
+                bottom: 20,
+                right: 20,
+                child: Container(
+                  child: Text(
+                    "${currentIndex + 1}" +
+                        "/" +
+                        "${widget.thumbGalleryItems.length}",
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 17.0,
+                      decoration: null,
+                    ),
                   ),
                 ),
               ),
-            ),
-            Positioned(
-              top: 30,
-              left: 0,
-              child: IconButton(
-                iconSize: 20,
-                icon: Icon(
-                  Icons.arrow_back,
-                  color: Colors.white,
+              Positioned(
+                top: 30,
+                left: 0,
+                child: IconButton(
+                  iconSize: 20,
+                  icon: Icon(
+                    Icons.arrow_back,
+                    color: Colors.white,
+                  ),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
                 ),
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-              ),
-            )
-          ],
+              )
+            ],
+          ),
         ),
       ),
     );

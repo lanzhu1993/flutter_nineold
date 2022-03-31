@@ -18,7 +18,8 @@ class NineOldWidget extends StatelessWidget {
 
   NineOldWidget(
       {required this.images,
-      required this.moreStyle,
+      this.moreStyle =
+          const TextStyle(fontSize: 32, fontFamily: "Poppins-Regular"),
       this.backgroundColor = Colors.white,
       this.strokeWidth = 3,
       this.valueColor = Colors.tealAccent,
@@ -374,9 +375,7 @@ class NineOldWidget extends StatelessWidget {
                 child: Center(
                   child: Text(
                     "+$valueCount",
-                    style: null == moreStyle
-                        ? TextStyle(fontSize: 32, fontFamily: "Poppins-Regular")
-                        : moreStyle,
+                    style: moreStyle,
                   ),
                 ),
               ),

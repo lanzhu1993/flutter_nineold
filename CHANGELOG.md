@@ -1,4 +1,4 @@
-## Version 3.2.1
+## Version 3.2.2
 1. Update pub dependency and fluent version 2.10.1
    
 2. Fix the same picture address hero animation tag problem
