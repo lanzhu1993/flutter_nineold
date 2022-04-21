@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:nineold/widget/nine_old_widget.dart';
+
+import 'generated/l10n.dart';
 
 void main() => runApp(MyApp());
 
@@ -7,11 +10,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: "国际化",
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       home: MyHomePage(),
+      localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+        S.delegate
+      ],
+      supportedLocales: S.delegate.supportedLocales,
     );
   }
 }
@@ -34,7 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Flutter Nine Old"),
+        title: Text(S.of(context).title),
       ),
       body: ListView.separated(
         itemBuilder: (context, index) {
@@ -111,7 +121,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ],
           ),
-          Text("第$index条")
+          Text("${S.of(context).unit_the}$index${S.of(context).unit_item}")
         ],
       ),
     );
