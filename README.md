@@ -223,4 +223,9 @@ NineOldWidget 是用来封装图片九宫格显示的组件, 方便使用者能�
 [photo_view](https://github.com/renancaraujo/photo_view)
 
 
+## 浏览数
+
+<img align="left" src = "https://profile-counter.glitch.me/flutter_nineold/count.svg" alt ="Loading">
+
+
 
